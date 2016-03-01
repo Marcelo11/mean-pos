@@ -1,0 +1,32 @@
+﻿<div class="container">
+<div>
+<a href="#/agregarVenta" class="btn btn-success">Agregar Venta</a>
+<button type="button" class="btn btn-primary" ng-click="totalVenta()">Total Ventas</button>
+<br></br>
+</div>
+<table class="table">
+   <tr>
+    <th>Número de Venta</th>
+    <th>Fecha</th> 
+    <th>Vendedor</th>
+	<th>Total</th>
+  </tr>
+  <tr ng-repeat="venta in ventas | filter:buscarReferencia | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+    <td>{{venta._id}}</td>
+    <td>{{venta.fecha}}</td> 
+    <td>{{venta.usuario.nombre}} {{venta.usuario.apellido}}</td>
+	<td>{{venta.total}}</td>
+	<td><button type="button" class="btn btn-warning" ng-click="editar(venta)">&nbsp;Editar&nbsp;</button></td>
+	<td><button type="button" class="btn btn-danger" ng-click="showModal(venta)">Eliminar</button></td>
+  </tr>
+</table>
+<div>
+<ul class="pagination">
+<li><a href="" ng-click="pagination.prevPage()">&laquo;</a></li>
+  <li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+  <a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
+  </li>
+  <li><a href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+</ul>
+</div>
+</div>

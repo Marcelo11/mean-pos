@@ -1,0 +1,53 @@
+﻿ <div class="container">
+ <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>{{titulo}}</h3>
+        
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-envelope"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom contact-form">
+			                    <form role="form">
+								 <div class="form-group">
+			                        	<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1">Nombre</span>
+			                        	<input type="text" name="nombre" placeholder="Nombre..." class="contact-nombre form-control" id="contact-nombre" ng-model="producto.nombre">
+										</div>
+			                        </div>
+									 <div class="form-group">
+			                        	<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1">&nbsp;Código&nbsp;</span>
+			                        	<input type="text" name="codigo" placeholder="Código..." class="contact-codigo form-control" id="contact-codigo" ng-model="producto.codigo">
+										</div>
+			                        </div>
+			                    	<div class="form-group">
+			                    		<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1">&nbsp;Precio&nbsp;&nbsp;</span>
+			                        	<input type="text" name="precio" placeholder="Precio..." class="contact-precio form-control" id="contact-precio" ng-model="producto.precio">
+										</div>
+			                        </div>
+			                         <div class="form-group">
+			                        	<div class="input-group">
+										<span class="input-group-addon" id="basic-addon1">&nbsp;&nbsp;Stock&nbsp;&nbsp;</span>
+			                        	<input type="text" name="stock" placeholder="Stock..." class="contact-stock form-control" id="contact-stock" ng-model="producto.stock">
+										</div>
+			                        </div>
+									
+			
+	<br></br>
+	 <button type="submit" class="btn btn-success" ng-click="agregarProducto()">{{nombreBoton}}</button>
+	 </form>
+		                    </div>
+                        </div>
+</div>
+
+</div>  
+<br></br>           
+<div class="alert alert-danger fade in" ng-show="alertVisible">
+    <strong>Error:</strong> Codigo de producto ya Existe.
+</div>  
+            

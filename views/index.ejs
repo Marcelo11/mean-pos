@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>Punto De Venta</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body ng-app="PosApp">
+<div class="container" ng-show="navVisible">
+ <header>
+ <nav class= "navbar navbar-default">
+ <div class="container-fluid">
+ <div class="navbar-header">
+ <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-1">
+ <span class="sr-only">Menu</span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ <span class="icon-bar"></span>
+ </button>
+ <a href="#/inicio" class="navbar-brand">Punto De Venta</a>
+ </div>
+ <div class="collapse navbar-collapse" id="navbar-1">
+ <ul class="nav navbar-nav">
+ <li><a href="#/listarVenta"">Ventas</a></li>
+ <li><a href="#/listarProducto">Productos</a></</li>
+ <li><a href="#/listarUsuario">Usuarios</a></</li>
+ </ul>
+ <ul class="nav navbar-nav navbar-right">
+ <li><a href="#/">Cerrar Sesión</a></li>
+ </ul>
+   <form action="" class="navbar-form navbar-right" role="search">
+ <div class="form-group">
+	<input type="text" class="form-control" placeholder="buscar" ng-model="buscarReferencia">
+ </div>
+ </form>
+ 
+ </div>
+
+ </div>
+ </nav>
+ </header>
+ </div>
+<div class="container">
+    <div ng-view></div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.9/angular-route.min.js"></script>
+<script src="https://code.angularjs.org/1.4.9/angular-resource.min.js"></script>
+<script src="https://code.angularjs.org/1.4.9/angular-cookies.min.js"></script>
+<script src="https://code.angularjs.org/1.4.9/angular-animate.min.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
+<script src="javascripts/cliente.app.js"></script>
+<script src="javascripts/controllers/UsuarioCtrl.js"></script>
+<script src="javascripts/services/UsuarioSvc.js"></script>
+<script src="javascripts/services/simplePagination.js"></script>
+<script src="javascripts/controllers/ProductoCtrl.js"></script>
+<script src="javascripts/services/ProductoSvc.js"></script>
+<script src="javascripts/controllers/VentaCtrl.js"></script>
+<script src="javascripts/services/VentaSvc.js"></script>
+<script src="javascripts/directives/autoFocus.js"></script>
+
+</body> 
+</html>

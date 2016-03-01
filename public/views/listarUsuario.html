@@ -1,0 +1,38 @@
+<div class="container">
+<div>
+<a href="#/agregarUsuario" class="btn btn-success">Agregar Usuarios</a>
+<br></br>
+</div>
+<table class="table">
+   <tr>
+    <th>Nombre</th>
+    <th>Apellido</th> 
+    <th>Email</th>
+	<th>Telefono</th>
+	<th>Usuario</th>
+	<th>Password</th>
+	<th>Rol</th>
+  </tr>
+  <tr ng-repeat="usuario in usuarios | filter:buscarReferencia | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+    <td>{{usuario.nombre}}</td>
+    <td>{{usuario.apellido}}</td> 
+    <td>{{usuario.email}}</td>
+	<td>{{usuario.telefono}}</td> 
+    <td>{{usuario.usuario}}</td>
+	<td>{{usuario.password}}</td> 
+    <td>{{roles[usuario.rol]}}</td>
+	<td><button type="button" class="btn btn-warning" ng-click="editar(usuario)">&nbsp;Editar&nbsp;</button></td>
+	<td><button type="button" class="btn btn-danger" ng-click="showModal(usuario)">Eliminar</button></td>
+	<td><button type="button" class="btn btn-primary" ng-click="totalVenta(usuario)">Total Ventas</button></td>
+  </tr>
+</table>
+<div>
+<ul class="pagination">
+<li><a href="" ng-click="pagination.prevPage()">&laquo;</a></li>
+  <li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+  <a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
+  </li>
+  <li><a href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+</ul>
+</div>
+</div>

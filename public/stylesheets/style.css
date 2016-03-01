@@ -1,0 +1,90 @@
+
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  overflow:inherit; padding-right:inherit !important;
+}
+body.modal-open { overflow:inherit; padding-right:inherit !important; }
+
+body { padding-top:20px; }
+.panel-body .btn:not(.btn-block) { width:265px;margin-bottom:10px; }
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+*{
+    font-family: arial;
+    font-size: 13px;
+}
+
+fieldset{
+    background: #FCFCFC;
+    padding: 2px;
+    border: 1px solid #D5D5D5;
+}
+.addfields{
+    margin: 10px 0;
+}
+
+#choicesDisplay {
+    padding: 10px;
+    background: rgb(227, 250, 227);
+    border: 1px solid rgb(171, 239, 171);
+    color: rgb(9, 56, 9);
+}
+.pagination{
+	margin: 0px;
+}
+input[type="text"],
+select{
+    padding:5px;
+}
+
+.block{
+    background: #FCFCFC;
+    padding: 2px;
+    border: 1px solid #D5D5D5;
+}
+
+ .full button span {
+    background-color: limegreen;
+    border-radius: 32px;
+    color: black;
+  }
+  .partially button span {
+    background-color: orange;
+    border-radius: 32px;
+    color: black;
+  }

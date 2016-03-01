@@ -1,0 +1,31 @@
+<div class="container">
+<div>
+<a href="#/agregarProducto" class="btn btn-success">Agregar Productos</a>
+<br></br>
+</div>
+<table class="table">
+   <tr>
+    <th>Nombre</th>
+    <th>Codigo</th> 
+    <th>Precio</th>
+	<th>Stock</th>
+  </tr>
+  <tr ng-repeat="producto in productos | filter:buscarReferencia | startFrom: pagination.page * pagination.perPage | limitTo: pagination.perPage">
+    <td>{{producto.nombre}}</td>
+    <td>{{producto.codigo}}</td> 
+    <td>{{producto.precio}}</td>
+	<td>{{producto.stock}}</td> 
+	<td><button type="button" class="btn btn-warning" ng-click="editar(producto)">&nbsp;Editar&nbsp;</button></td>
+	<td><button type="button" class="btn btn-danger" ng-click="showModal(producto)">Eliminar</button></td>
+  </tr>
+</table>
+<div>
+<ul class="pagination">
+<li><a href="" ng-click="pagination.prevPage()">&laquo;</a></li>
+  <li ng-repeat="n in [] | range: pagination.numPages" ng-class="{active: n == pagination.page}">
+  <a href="" ng-click="pagination.toPageId(n)">{{n + 1}}</a>
+  </li>
+  <li><a href="" ng-click="pagination.nextPage()">&raquo;</a></li>
+</ul>
+</div>
+</div>

@@ -1,0 +1,30 @@
+{
+	"fecha": "11/11/2011",
+	"total": 5000,
+	"usuario": {		
+			"nombre": "mr",
+			"apellido": "Riquelmeee",
+			"email": "riqulememarcelo@gmail.commm",
+			"telefono": "95762208888",
+			"usuario": "mr",
+			"password": "111"
+			 },
+	"detalle": [	{"producto":{
+						"nombre": "rexona men",
+						"codigo": "111",
+						"precio": 50,
+						"stock": 20},
+					"cantidad": 5,
+					"subtotal":200
+					},
+					
+					{"producto":{
+						"nombre": "rexona rewoman",
+						"codigo": "333",
+						"precio": 100,
+						"stock": 40},
+					"cantidad": 8,
+					"subtotal":3000
+					}	
+						]	
+}
