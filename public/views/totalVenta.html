@@ -37,3 +37,27 @@
 		<p>Venta del entre las fechas : {{totalesFecha}}</p>
     </div>
 </div>
+
+
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item active">Ventas de: {{usuario.nombre}} {{usuario.apellido}}</li>
+  <li class="list-group-item list-group-item">Venta de hoy : {{totalDia}}</li>
+  <li class="list-group-item list-group-item">Venta del mes : {{totalMes}}</li>
+  <li class="list-group-item list-group-item">Venta del año : {{totalAno}}</li>
+</ul>
+<br></br>
+<ul class="list-group">
+  <li class="list-group-item list-group-item active">Ventas de todos los usuarios</li>
+  <li class="list-group-item list-group-item">Venta de hoy : {{totalesDia}}</li>
+  <li class="list-group-item list-group-item">Venta del mes : {{totalesMes}}</li>
+  <li class="list-group-item list-group-item">Venta del año : {{totalesAno}}</li>
+  <li class="list-group-item list-group-item">  <div class="col-md-2">
+            <p class="input-group">
+              <input type="text" class="form-control" ng-click="open1()" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" current-text="Hoy" clear-text="Limpiar" close-text="Cerrar" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div></li>
+</ul>
