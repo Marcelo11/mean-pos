@@ -215,25 +215,37 @@ fechaVentaAno=((fechaVentaHoy).split("/"))[2];
    $scope.today = function() {
     $scope.dt1 = new Date();
 	$scope.dt2 = new Date();
+	$scope.dt3 = new Date();
+	$scope.dt4 = new Date();
   };
   $scope.today();
 
   $scope.clear = function() {
     $scope.dt1 = null;
 	$scope.dt2 = null;
+	$scope.dt3 = null;
+	$scope.dt4 = null;
   };
 
   $scope.maxDate = new Date(2020, 5, 22);
 
   $scope.open1 = function() {
     $scope.popup1.opened = true;
-   
-	
   };
 
-  $scope.open2 = function() {
+   $scope.open2 = function() {
     $scope.popup2.opened = true;
   };
+  
+  $scope.open3 = function() {
+   $scope.popup3.opened = true;
+  };
+  
+  $scope.open4 = function() {
+  $scope.popup4.opened = true;
+  };
+
+ 
 
  
   $scope.dateOptions = {
@@ -252,8 +264,40 @@ fechaVentaAno=((fechaVentaHoy).split("/"))[2];
   $scope.popup2 = {
     opened: false
   };
+  
+   $scope.popup3 = {
+    opened: false
+  };
+
+  $scope.popup4 = {
+    opened: false
+  };
 
  $scope.dateOptions = {'clear-text': 'Hoy'};  
+  
+    $scope.calcularVentaFechaUsuario= function(){
+	 
+	  
+	  var fechaInicio = (($scope.dt3.toLocaleString()).split(" ",1))[0];
+	  var fechaFin = (($scope.dt4.toLocaleString()).split(" ",1))[0];
+	  $scope.totalFecha=0;
+	  i = 0;
+	 	
+while (VentaSvc.ventas[i]) {
+
+fechaVenta=((VentaSvc.ventas[i].fecha).split(" ",1))[0];
+
+
+	 if(VentaSvc.ventas[i].usuario.usuario == $scope.usuario.usuario&&moment(fechaVenta, "DD-MM-YYYY") >= moment(fechaInicio, "DD-MM-YYYY") && moment(fechaVenta, "DD-MM-YYYY") <= moment(fechaFin, "DD-MM-YYYY")){
+	$scope.totalFecha=VentaSvc.ventas[i].total + $scope.totalFecha;
+																	}	 
+
+    i++;
+	 
+}
+		
+  };
+  
   
   $scope.calcularVentaFecha= function(){
 	 
@@ -272,17 +316,15 @@ while (VentaSvc.ventas[i]) {
 fechaVenta=((VentaSvc.ventas[i].fecha).split(" ",1))[0];
 
 
- 	if(moment(fechaVenta, "DD-MM-YYYY") >= moment(fechaInicio, "DD-MM-YYYY") && moment(fechaVenta, "DD-MM-YYYY") <= moment(fechaFin, "DD-MM-YYYY")){
+
+ 	if(moment(fechaVenta, "DD-MM-YYYY-MM-DD") >= moment(fechaInicio, "DD-MM-YYYY") && moment(fechaVenta, "DD-MM-YYYY") <= moment(fechaFin, "DD-MM-YYYY")){
 	$scope.totalesFecha=VentaSvc.ventas[i].total + $scope.totalesFecha;
 																	}																
 	
     i++;
 	 
 }
-		  console.log($scope.totalesFecha);
-		 
-
-
+		  
 
   };
 	

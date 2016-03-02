@@ -1,21 +1,39 @@
-﻿<div class="panel panel-primary">
-  <div class="panel-heading">Ventas de: {{usuario.nombre}} {{usuario.apellido}}</div>
-  <div class="panel-body">
-    <p>Venta de hoy : {{totalDia}}</p>
-	<br></br>
-	<p>Venta del mes : {{totalMes}}</p>
-	<br></br>
-	<p>Venta del año : {{totalAno}}</p>
-  </div>
-   <div class="panel-heading">Ventas de todos los usuarios</div>
-  <div class="panel-body">
-    <p>Venta de hoy : {{totalesDia}}</p>
-	<br></br>
-	<p>Venta del mes : {{totalesMes}}</p>
-	<br></br>
-	<p>Venta del año : {{totalesAno}}</p>
-  </div>
-      <div class="row">
+﻿
+<ul class="list-group">
+  <li class="list-group-item list-group-item active">Ventas de: {{usuario.nombre}} {{usuario.apellido}}</li>
+  <li class="list-group-item list-group-item">Venta de hoy : {{totalDia}}</li>
+  <li class="list-group-item list-group-item">Venta del mes : {{totalMes}}</li>
+  <li class="list-group-item list-group-item">Venta del año : {{totalAno}}</li>
+    <div class="row">
+        <div class="col-md-2">
+            <p class="input-group">
+              <input type="text" class="form-control" ng-click="open3()" uib-datepicker-popup="{{format}}" ng-model="dt3" is-open="popup3.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" current-text="Hoy" clear-text="Limpiar" close-text="Cerrar" alt-input-formats="altInputFormats" />
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open3()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+
+        <div class="col-md-2">
+            <p class="input-group">
+              <input type="text" class="form-control" ng-click="open4()" uib-datepicker-popup="{{format}}" ng-model="dt4" is-open="popup4.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" current-text="Hoy" clear-text="Limpiar" close-text="Cerrar" alt-input-formats="altInputFormats"/>
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open4()"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+		<button type="button" class="btn btn-success" ng-click="calcularVentaFechaUsuario()">Calcular Venta</button>
+		
+    </div>
+	<p>Venta de ventas entre las fechas : {{totalFecha}}</p>
+</ul>
+<br></br>
+<ul class="list-group">
+  <li class="list-group-item list-group-item active">Ventas de todos los usuarios</li>
+  <li class="list-group-item list-group-item">Venta de hoy : {{totalesDia}}</li>
+  <li class="list-group-item list-group-item">Venta del mes : {{totalesMes}}</li>
+  <li class="list-group-item list-group-item">Venta del año : {{totalesAno}}</li>
+  <div class="row">
         <div class="col-md-2">
             <p class="input-group">
               <input type="text" class="form-control" ng-click="open1()" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" current-text="Hoy" clear-text="Limpiar" close-text="Cerrar" alt-input-formats="altInputFormats" />
@@ -34,30 +52,7 @@
             </p>
         </div>
 		<button type="button" class="btn btn-success" ng-click="calcularVentaFecha()">Calcular Venta</button>
-		<p>Venta del entre las fechas : {{totalesFecha}}</p>
+		
     </div>
-</div>
-
-
-
-<ul class="list-group">
-  <li class="list-group-item list-group-item active">Ventas de: {{usuario.nombre}} {{usuario.apellido}}</li>
-  <li class="list-group-item list-group-item">Venta de hoy : {{totalDia}}</li>
-  <li class="list-group-item list-group-item">Venta del mes : {{totalMes}}</li>
-  <li class="list-group-item list-group-item">Venta del año : {{totalAno}}</li>
-</ul>
-<br></br>
-<ul class="list-group">
-  <li class="list-group-item list-group-item active">Ventas de todos los usuarios</li>
-  <li class="list-group-item list-group-item">Venta de hoy : {{totalesDia}}</li>
-  <li class="list-group-item list-group-item">Venta del mes : {{totalesMes}}</li>
-  <li class="list-group-item list-group-item">Venta del año : {{totalesAno}}</li>
-  <li class="list-group-item list-group-item">  <div class="col-md-2">
-            <p class="input-group">
-              <input type="text" class="form-control" ng-click="open1()" uib-datepicker-popup="{{format}}" ng-model="dt1" is-open="popup1.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" current-text="Hoy" clear-text="Limpiar" close-text="Cerrar" alt-input-formats="altInputFormats" />
-              <span class="input-group-btn">
-                <button type="button" class="btn btn-default" ng-click="open1()"><i class="glyphicon glyphicon-calendar"></i></button>
-              </span>
-            </p>
-        </div></li>
+	<p>Venta de ventas entre las fechas : {{totalesFecha}}</p>
 </ul>
