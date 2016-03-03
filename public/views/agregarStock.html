@@ -1,0 +1,26 @@
+﻿<div class="container">
+<div class="row">
+<div class="col-xs-12 col-sm-6 col-md-5 text-center">
+<form action="" class="form-inline" ng-submit="agregarStock()">
+  <fieldset>
+	 <div class="input-group col-md-4">
+      <input type="number" class="form-control" id="cantidad" placeholder="Cantidad" ng-model="cantidad" autofocus>
+	  </div>
+      <div class="input-group">
+      <input type="text" class="form-control" id="codigo" placeholder="Código de Producto..."  ng-model="codigo" >
+      <span class="input-group-btn">
+        <button class="btn btn-success" type="submit" >Agregar</button>
+      </span>
+		</div>
+    </fieldset>
+
+</form>
+</div> 
+</div>
+<div class="alert alert-danger fade in" ng-show="alertVisible">
+    <strong>Error:</strong> No Existe el Producto.
+</div> 
+<div class="alert alert-success fade in" ng-show="successVisible">
+    <strong>Exito:</strong> se ha modificado correctamente el stock al producto {{producto.nombre}}, el stock final es: {{producto.stock}}.
+</div> 
+</div>

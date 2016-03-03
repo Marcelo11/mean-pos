@@ -75,4 +75,31 @@ $scope.eliminarProducto=function(){
             	$location.path("/listarProducto");
         }
 	
-});
+})
+.controller('AgregarStockCtrl',function($scope,ProductoSvc){
+	$scope.agregarStock = function() {
+		if($scope.codigo!=null){
+		
+		ProductoSvc.getCodigo({codigo: $scope.codigo}).then(function (result) {
+		 if (result.data[0]!=null && $scope.cantidad!= 0){
+			 $scope.producto=result.data[0];
+			 
+			 $scope.producto.stock = $scope.producto.stock + $scope.cantidad
+			 ProductoSvc.update($scope.producto);
+			 
+			 $scope.alertVisible=false;
+			 $scope.successVisible=true;
+			 
+			 $scope.cantidad="";
+			 document.getElementById("cantidad").focus();	
+       
+        }
+		else{
+			$scope.successVisible=false;
+			$scope.alertVisible=true;
+			
+		}
+        }) 
+		}
+	}	
+})	
