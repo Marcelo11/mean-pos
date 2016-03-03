@@ -79,7 +79,28 @@ $scope.agregarVenta = function() {
 	if( $scope.total > 0){
 		var fechaVenta = new Date().toLocaleString();
 		usuario=$cookies.getObject('usuario');
-		 UsuarioSvc.getUser({usuario: usuario[0].usuario}).then(function (result) {
+		
+//se resta el stock de los productos
+i = 0;
+stockFinal=0;		
+while ($scope.detalles[i]) {	
+stockResta= $scope.detalles[i].cantidad;
+producto = $scope.detalles[i].producto;
+ProductoSvc.getCodigo({codigo: $scope.detalles[i].producto.codigo}).then(function (result) {
+	
+stockFinal=result.data[0].stock - stockResta;
+
+	producto.stock=stockFinal;
+	ProductoSvc.update(producto);	
+	console.log(producto);
+}) 	
+
+i ++;
+}		
+		
+		
+		
+		UsuarioSvc.getUser({usuario: usuario[0].usuario}).then(function (result) {
  	VentaSvc.add({
 		fecha: fechaVenta,
 		total: $scope.total,
@@ -87,6 +108,7 @@ $scope.agregarVenta = function() {
 		detalle: $scope.detalles
 		});	  
 	
+	 		
 //se inicializa todo a su estado original		
 $scope.detalles = [];
 $scope.total=0;
@@ -149,12 +171,29 @@ $scope.total= $scope.total - $scope.detalles[index].subtotal;
 $scope.detalles.splice(index,1);
   }; 	
 	 
-	  $scope.agregarVenta = function() {
+$scope.agregarVenta = function() {
 		  
 		  if( $scope.total > 0){
 $scope.venta.detalle = $scope.detalles;
 $scope.venta.total= $scope.total;
 
+//se resta el stock de los productos
+/* i = 0;
+stockFinal=0;		
+while ($scope.detalles[i]) {	
+stockResta= $scope.detalles[i].cantidad;
+producto = $scope.detalles[i].producto;
+ProductoSvc.getCodigo({codigo: $scope.detalles[i].producto.codigo}).then(function (result) {
+	
+stockFinal=result.data[0].stock - stockResta;
+
+	producto.stock=stockFinal;
+	ProductoSvc.update(producto);	
+	console.log(producto);
+}) 	
+
+i ++;
+} */
 		
 			VentaSvc.update($scope.venta);
             	$location.path("/listarVenta");  

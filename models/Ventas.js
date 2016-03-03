@@ -2,10 +2,12 @@ var mongoose = require('mongoose');
 
 var DetalleSchema = new mongoose.Schema({
 	producto: {
+		    _id: String,
 			nombre: String,
 			codigo: String,
 			precio:Number,
 			stock: Number
+			
 			},	
 	cantidad: String,
 	subtotal: Number	
