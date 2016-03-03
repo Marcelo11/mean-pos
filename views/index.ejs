@@ -22,16 +22,16 @@
  </div>
  <div class="collapse navbar-collapse" id="navbar-1">
  <ul class="nav navbar-nav">
- <li><a href="#/listarVenta"">Ventas</a></li>
- <li><a href="#/listarProducto">Productos</a></</li>
- <li><a href="#/listarUsuario">Usuarios</a></</li>
+ <li><a href="#/listarVenta">Ventas</a></li>
+ <li ng-show="visible"><a href="#/listarProducto">Productos</a></</li>
+ <li ng-show="visible"><a href="#/listarUsuario">Usuarios</a></</li>
  </ul>
  <ul class="nav navbar-nav navbar-right">
  <li><a href="#/">Cerrar Sesión</a></li>
  </ul>
    <form action="" class="navbar-form navbar-right" role="search">
  <div class="form-group">
-	<input type="text" class="form-control" placeholder="buscar" ng-model="buscarReferencia">
+	<input type="text" class="form-control" placeholder="Buscar..." ng-model="buscarReferencia">
  </div>
  </form>
  

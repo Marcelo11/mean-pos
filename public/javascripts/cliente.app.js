@@ -14,7 +14,7 @@ angular.module('PosApp', [
 									}else{
 										$rootScope.visible=true;
 									} 
-			  if(next.templateUrl!='views/login.html' && usuario[0].rol!=0){
+			  if(next.templateUrl!='views/login.html' && usuario[0].rol==null){
 				  $location.path('/inicio');
 			  }
 		  }
