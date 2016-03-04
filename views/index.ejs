@@ -22,12 +22,16 @@
  </div>
  <div class="collapse navbar-collapse" id="navbar-1">
  <ul class="nav navbar-nav">
- <li><a href="#/listarVenta">Ventas</a></li>
- <li ng-show="visible"><a href="#/listarProducto">Productos</a></</li>
- <li ng-show="visible"><a href="#/listarUsuario">Usuarios</a></</li>
+ <li><a href="#/listarVenta" title="Gestión de Ventas">Ventas</a></li>
+ <li><a href="#/listarProducto" title="Gestión de Productos">Productos</a></</li>
+ <li ng-show="visible"><a href="#/listarUsuario" title="Gestión de Usuarios">Usuarios</a></</li>
  </ul>
  <ul class="nav navbar-nav navbar-right">
  <li><a href="#/">Cerrar Sesión</a></li>
+ </ul>
+  <ul class="nav navbar-nav navbar-right">
+ <li><a href="#/editarPerfil" title="Perfil"><span class="glyphicon glyphicon glyphicon-user"></span></a></li>
+
  </ul>
    <form action="" class="navbar-form navbar-right" role="search">
  <div class="form-group">

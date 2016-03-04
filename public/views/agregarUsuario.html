@@ -50,14 +50,14 @@
 			                        </div>
 									  <div>
      
-        <label class="radio-inline">
+        <label class="radio-inline" ng-show="visible">
             <input type="radio" ng-model="usuario.rol" value="0"> Administrador
         </label>
 <!-- 		Aun no se implementará el usuario Encargado
         <label class="radio-inline">
             <input type="radio" ng-model="usuario.rol" value="1"> Encargado
         </label> -->
-        <label class="radio-inline">
+        <label class="radio-inline" ng-show="visible">
             <input type="radio" ng-model="usuario.rol" value="2"> Cajero
         </label>
     </div>

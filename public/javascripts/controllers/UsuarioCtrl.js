@@ -7,9 +7,8 @@ angular.module('PosApp')
 //inicia sesion
 $scope.iniciarSesion=function(){
 UsuarioSvc.getUserPass({usuario: $scope.usuario.usuario, password: $scope.usuario.password}).then(function (result) {
-           console.log(result.data[0]);
 		   	if (result.data[0]==null){
-//si usuario no existe lo reenvia al login				
+//si usuario no existe lo envia al login	
 			$scope.alertVisible=true;
 			$location.path("/");
 		}else{
@@ -105,7 +104,7 @@ $scope.eliminarUsuario=function(){
 		  $uibModalInstance.dismiss('cancel');
 	  };
 })
-.controller('EditarUsuarioCtrl',function($scope,$location,$cookies,UsuarioSvc){
+.controller('EditarUsuarioCtrl',function($scope,$location,UsuarioSvc){
 	 $scope.titulo="Editar Usuario";
 	 $scope.nombreBoton="Editar";
 	 $scope.usuario = UsuarioSvc.usuario;
@@ -115,4 +114,18 @@ $scope.eliminarUsuario=function(){
             	$location.path("/listarUsuario");
         }
 	
+})
+.controller('EditarPerfilCtrl',function($scope,$location,UsuarioSvc,$cookies){
+	 $scope.titulo="Editar Perfil";
+	 $scope.nombreBoton="Editar";
+	 usuario=$cookies.getObject('usuario');
+ UsuarioSvc.getUser({usuario: usuario[0].usuario}).then(function (result) {
+	 
+	 $scope.usuario = result.data[0];
+	 
+	 $scope.agregarUsuario = function() {
+           UsuarioSvc.update($scope.usuario);
+            	$location.path("/listarUsuario");
+        }
+ });
 });

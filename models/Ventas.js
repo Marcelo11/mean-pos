@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var DetalleSchema = new mongoose.Schema({
+var DetalleSchema = new mongoose.Schema({ 
 	producto: {
 		    _id: String,
 			nombre: String,

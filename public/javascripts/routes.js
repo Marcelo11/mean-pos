@@ -21,6 +21,10 @@
         templateUrl: 'views/agregarUsuario.html',
         controller: 'EditarUsuarioCtrl'
       })
+	 .when('/editarPerfil', {
+        templateUrl: 'views/agregarUsuario.html',
+        controller: 'EditarPerfilCtrl'
+      })
 	.when('/listarProducto', {
         templateUrl: 'views/listarProducto.html',
         controller: 'ListarProductoCtrl'

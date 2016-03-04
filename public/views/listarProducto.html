@@ -17,8 +17,8 @@
     <td>{{producto.codigo}}</td> 
     <td>{{producto.precio}}</td>
 	<td>{{producto.stock}}</td> 
-	<td><button type="button" class="btn btn-warning" ng-click="editar(producto)">&nbsp;Editar&nbsp;</button></td>
-	<td><button type="button" class="btn btn-danger" ng-click="showModal(producto)">Eliminar</button></td>
+	<td><button type="button" ng-show="visible" class="btn btn-warning" ng-click="editar(producto)">&nbsp;Editar&nbsp;</button></td>
+	<td><button type="button" ng-show="visible" class="btn btn-danger" ng-click="showModal(producto)">Eliminar</button></td>
   </tr>
 </table>
 <div>
